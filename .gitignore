@@ -12,6 +12,9 @@ pids
 .nyc_output
 .nyc_output/*
 .nyc_output/processinfo/*
+.tmp
+.tmp/*
+
 coverage/*
 
 
