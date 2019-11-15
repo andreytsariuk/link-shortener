@@ -5,9 +5,8 @@
 The following software shall be installed:
 
 * **[NodeJS](http://nodejs.org)** v. 10.x
-* **[PostgreSQL](http://www.postgresql.org)** v. 10.x
 * **[eslint](https://www.npmjs.com/package/eslint)** v.5.16.0 
-* **[se-cli](https://gitlab.i.sigmaukraine.com/andrey.tsariuk/se-cli)** v.1.1.0 (Recommended)
+* **[Redis](https://redis.io/)** v.3.0.6 
 
 
 ## NPM scripts
@@ -38,39 +37,11 @@ Before each **push** will run linter and full set of Tests: Unit + Integration +
 
 
 ### Docker-Composer 
-
-first of all provide your path to DB like an env variable.
-```
-export DB_CONNECTION_URL=postgres://zapp_aql:zapp_aql@localhost/zapp_aql
-```
-
-after that from the *ql_api* folder run the next command for migrations:
-```
-npm run migrations:run
-``` 
-
-an the next command for *seeds*:
-```
-npm run seed:run
+Just ensure thar you have the right version of docker (or change the version in docker-compose.yam file) and run the next comman
 
 ```
+docker-compose up
 
-
-## Running
-
-To start server for just user the following command: 
-```
-npm start
-```
-
-Also you can build swagger-file separately with SE-cli:
-```
-se-cli build
-```
-
-You can crete new API route via SE-cli:
-```
-se-cli add /api/v1/you/awesome/api/path
 ```
 
 

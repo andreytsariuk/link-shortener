@@ -11,7 +11,7 @@
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "test": "npm run integration-tests",
     "integration-tests": "nyc --reporter=lcov --reporter=text-summary mocha --timeout 100000 --bail --exit --full-trace --async-only ./test/integration-tests/",
-    "load-tests": "concurrently --kill-others \"artillery run test/load-tests/basic.test.yml\" \"npm start\" "
+    "load-tests": "artillery run test/load-tests/basic.test.yml"
   },
   "dependencies": {
     "bluebird": "^3.7.1",
