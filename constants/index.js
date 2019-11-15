@@ -3,5 +3,6 @@
  * =================Main Export=================
  */
 module.exports = {
-  ERRORS: require('./errors')
+  ERRORS: require('./errors'),
+  BASIC: require('./basic')
 };

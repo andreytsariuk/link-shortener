@@ -31,7 +31,7 @@ class RedisService {
    * Log when Error
    * @param {string} name
    */
-  onError() {
+  onError(err) {
     console.log(`REDIS_ERROR_${process.pid}`, err);
   }
 

@@ -3,10 +3,15 @@ const {
   response // eslint-disable-line no-unused-vars
 } = require('express')();
 const { RedisService } = require('../services');
-const { ERRORS: {
-  SHORTED_URL_WAS_NOT_FOUND,
-  EMPTY_URL_FOR_SHORTING
-}} = require('../constants');
+const {
+  ERRORS: {
+    SHORTED_URL_WAS_NOT_FOUND,
+    EMPTY_URL_FOR_SHORTING,
+    INCORRECT_URL_PROVIDED
+  },
+  BASIC: {
+    URL_REGEXP
+  } } = require('../constants');
 const uniqid = require('uniqid');
 const config = require('config');
 
@@ -22,10 +27,11 @@ module.exports = class {
     * @param {function} next 
     */
   static post(req, res, next) {
-    console.log('req.body',req.body);
     const { url } = req.body;
     if (!url)
       return next(new Error(EMPTY_URL_FOR_SHORTING));
+    if (!URL_REGEXP.test(url))
+      return next(new Error(INCORRECT_URL_PROVIDED));
 
 
     const code = uniqid();

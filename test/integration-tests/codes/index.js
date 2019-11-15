@@ -1,2 +1,2 @@
 //================Main Export================
-module.exports = require('./public.test');
+module.exports = require('./codes.test');
