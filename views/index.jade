@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  .wrapper
+    .inner
+      form(action='' id="actionForm")
+        h3 Link Shortener
+        
+        p
+          | Please enter the url to make it shorter
+        label.form-group
+          input.form-control(type='url', required='', id="url")
+          span http://... https://....
+          span.border
+        a(id="responseA", target="_blank")
+        button(id="actionButton")
+          | Submit 
+          i.zmdi.zmdi-arrow-right
+    // This templates was made by Colorlib (https://colorlib.com)
+

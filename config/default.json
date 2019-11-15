@@ -1,0 +1,10 @@
+{
+    "WEB_URL": "http://localhost:3000",
+    "REDIS": {
+        "config": {
+            "host": "127.0.0.1",
+            "port": 6379
+        },
+        "parser": "javascript"
+    }
+}

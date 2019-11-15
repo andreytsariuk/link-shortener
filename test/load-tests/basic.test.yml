@@ -1,0 +1,19 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 10
+      arrivalRate: 20
+  processor: "./basic.test.js"
+scenarios:
+  - flow:
+    - post:
+        url: "/api/v1/codes"
+        beforeRequest: "setCustomParamsToBodyURL"
+        json:
+          url: "https://google.com"
+        capture:
+          json: "$.short_url"
+          as: "short_url"
+    - get:
+        url: "{{ short_url }}"
+
