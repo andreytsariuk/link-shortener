@@ -1,5 +1,4 @@
-
-# Project Skeleton based on express
+Link Shortener
 
 
 The following software shall be installed:
